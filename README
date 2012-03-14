@@ -7,16 +7,13 @@ dating from 6 months ago at the latest. Since my machine usage is probably very
 anti-correlated with my sleeping, I decided to use kext logging to plot my
 sleep schedule as a function of time.
 
-TODO
-
-
-Installation
-------------
-
-TODO
+This is sort of a response to
+<http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/>
+but using my own machine's tools and data, without relying on external APIs for
+data gathering (e.g., email services), analysis, and visualization.
 
 
 Usage
 -----
 
-TODO
+FIXME

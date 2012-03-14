@@ -29,7 +29,7 @@ hour = np.zeros(log_len)
 for i, row in enumerate(log_iter):
     t = int(row[0])
     day[i] = floor(float(t) / 86400)
-    hour[i] = float((t % 86400)) / 3600
+    hour[i] = float(t % 86400) / 3600
 
 ndays = day.max() - day.min() + 1
 hour_lev = 4
