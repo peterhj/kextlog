@@ -2,7 +2,7 @@
 
 PREFIX=kernel.log
 OUTFILE=$PREFIX.out
-PARSE=./parse.awk
+PARSE=./parse
 DOTDOT=./dotdot
 
 parselog() {
