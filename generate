@@ -5,19 +5,20 @@ OUTFILE=$PREFIX.out
 PARSE=./parse.awk
 DOTDOT=./dotdot
 
+parselog() {
+  echo -n 'Parsing' $1
+  $PARSE $1 >> $OUTFILE &
+  $DOTDOT "$!"
+}
+
 if [ -e $OUTFILE ]; then
   echo 'Removing outfile.'
   rm -f $OUTFILE
 fi
 
-echo -n 'Parsing' $PREFIX
-$PARSE $PREFIX >> $OUTFILE &
-$DOTDOT "$!"
-
+parselog $PREFIX
 for ((i = 0; i <= 5; i++)); do
-  echo -n 'Parsing' $PREFIX.$i
-  $PARSE $PREFIX.$i >> $OUTFILE &
-  $DOTDOT "$!"
+  parselog $PREFIX.$i
 done
 
 echo 'Done!'

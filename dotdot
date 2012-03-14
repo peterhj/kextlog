@@ -1,17 +1,17 @@
 #!/bin/bash
 
-#DELAY=2
+DELAY=2
 
 if [ -z "$1" ]; then
   exit
 fi
 
-#if [ -n "$2" ]; then
-#  DELAY="$2"
-#fi
+if [ -n "$2" ]; then
+  DELAY=$2
+fi
 
 while [ -n "`ps -o 'pid=' $1`" ]; do
   echo -n '.'
-  sleep 2
+  sleep $DELAY
 done
 echo

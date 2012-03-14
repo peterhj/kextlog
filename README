@@ -1,4 +1,21 @@
-Kernel Extension Logging for Fun and Profit
-===========================================
+Mac OS X Kext Logging for Fun and Profit
+========================================
+
+Kernel extensions in Mac OS X ("kexts") log to the file /var/log/kernel.log
+which is backed up somewhat infrequently. On my machine, I have backed up logs
+dating from 6 months ago at the latest. Since my machine usage is probably very
+anti-correlated with my sleeping, I decided to use kext logging to plot my
+sleep schedule as a function of time.
+
+TODO
+
+Installation
+------------
+
+TODO
+
+
+Usage
+-----
 
 TODO
