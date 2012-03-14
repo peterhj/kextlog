@@ -1,0 +1,23 @@
+#!/bin/bash
+
+PREFIX=kernel.log
+OUTFILE=$PREFIX.out
+PARSE=./parse.awk
+DOTDOT=./dotdot
+
+if [ -e $OUTFILE ]; then
+  echo 'Removing outfile.'
+  rm -f $OUTFILE
+fi
+
+echo -n 'Parsing' $PREFIX
+$PARSE $PREFIX >> $OUTFILE &
+$DOTDOT "$!"
+
+for ((i = 0; i <= 5; i++)); do
+  echo -n 'Parsing' $PREFIX.$i
+  $PARSE $PREFIX.$i >> $OUTFILE &
+  $DOTDOT "$!"
+done
+
+echo 'Done!'
