@@ -1,4 +1,5 @@
 #!/usr/bin/awk -f
+
 BEGIN{
   FS = ":| +";
   formatspec = "%b %d %T";

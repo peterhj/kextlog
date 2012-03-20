@@ -6,6 +6,7 @@ import numpy as np
 
 from datetime import *
 import csv
+import sys
 
 # http://stackoverflow.com/questions/845058/how-to-get-line-count-cheaply-in-python
 def file_len(fname):
@@ -20,8 +21,14 @@ def day_format(d):
 def hour_format(h):
     return lambda x, pos: int(x) / h
 
-log_iter = csv.reader(open('kernel.log.out', 'rb'), delimiter=' ')
-log_len = file_len('kernel.log.out')
+if (len(sys.argv) > 1):
+    prefix = sys.argv[1]
+else:
+    prefix = '.'
+
+log_file = prefix.join(['/', 'kernel.log.out'])
+log_iter = csv.reader(open(log_file, 'rb'), delimiter=' ')
+log_len = file_len(log_file)
 
 day = np.zeros(log_len)
 hour = np.zeros(log_len)

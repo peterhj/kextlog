@@ -1,6 +1,12 @@
 #!/bin/bash
 
-PREFIX=kernel.log
+if [ -n $1 ]; then
+  PREFIX=$1
+else
+  PREFIX=.
+fi
+
+PREFIX=$PREFIX/kernel.log
 OUTFILE=$PREFIX.out
 PARSE=./parse
 DOTDOT=./dotdot
