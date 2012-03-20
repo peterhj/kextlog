@@ -26,7 +26,7 @@ if (len(sys.argv) > 1):
 else:
     prefix = '.'
 
-log_file = prefix.join(['/', 'kernel.log.out'])
+log_file = ''.join([prefix, '/', 'kernel.log.out'])
 log_iter = csv.reader(open(log_file, 'rb'), delimiter=' ')
 log_len = file_len(log_file)
 
