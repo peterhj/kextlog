@@ -7,7 +7,6 @@ BEGIN{
   lastyear_cmd = "TZ=GMT date +%Y";
   if ((lastyear_cmd | getline result) > 0) {
     last_year = result-1;
-    #system("echo " lastyear " >&2");
   }
   close(lastyear_cmd);
 

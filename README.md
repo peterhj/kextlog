@@ -9,25 +9,25 @@ sleep schedule as a function of time.
 
 This is sort of a response to
 <http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/>
-but using my own machine's tools and data without relying on external APIs for
-data collection, analysis, and visualization.
+but using my own machine's tools and data without relying on external services
+for data collection, analysis, and visualization.
 
 
 Requirements
 ------------
 
-awk, Python, numpy, matplotlib
+awk, python, numpy, matplotlib
 
 
 Usage
 -----
 
-At the moment, running
+At the moment, while logged in as `peter`, running
 
-    ./generate peter
-    ./plot.py peter
+    ./generate
+    ./plot.py
 
-will put the logs in a directory 'peter', run the awk script on the logs, and
+will put the logs in a directory `peter`, run the awk script on the logs, and
 then display a 2D histogram.
 
 
