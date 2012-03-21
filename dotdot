@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DELAY=2
-
 if [ -z "$1" ]; then
   exit
 fi
+
+DELAY=2
 
 if [ -n "$2" ]; then
   DELAY=$2

@@ -51,6 +51,7 @@ fig = plt.figure()
 ax = plt.subplot(111)
 ax.xaxis.set_major_formatter(plt.FuncFormatter(day_format(day.min())))
 ax.yaxis.set_major_formatter(plt.FuncFormatter(hour_format(hour_lev)))
+plt.yticks([0, 6*hour_lev, 12*hour_lev, 18*hour_lev])
 img = plt.imshow(H, interpolation='nearest', cmap='gray')
 
 plt.show()

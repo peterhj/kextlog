@@ -1,9 +1,9 @@
 #!/bin/bash
 
+PREFIX=.
+
 if [ -n $1 ]; then
   PREFIX=$1
-else
-  PREFIX=.
 fi
 
 PREFIX=$PREFIX/kernel.log
@@ -14,7 +14,7 @@ DOTDOT=./dotdot
 parselog() {
   echo -n 'Parsing' $1
   $PARSE $1 >> $OUTFILE &
-  $DOTDOT "$!"
+  $DOTDOT $!
 }
 
 if [ -e $OUTFILE ]; then
