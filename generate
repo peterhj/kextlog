@@ -6,7 +6,7 @@ parselog() {
   $DOTDOT $!
 }
 
-BASE=.
+BASE=`whoami`
 
 if [ -n $1 ]; then
   BASE=$1
@@ -30,7 +30,7 @@ fi
 # Copy over logs and run awk script.
 cp /var/log/kernel.log $BASE
 cp /var/log/kernel.log.*.bz2 $BASE
-bunzip2 $BASE/kernel.log.*.bz2
+bunzip2 $PREFIX.*.bz2
 
 parselog $PREFIX
 for ((i = 0; i <= 5; i++)); do

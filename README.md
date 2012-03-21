@@ -9,8 +9,8 @@ sleep schedule as a function of time.
 
 This is sort of a response to
 <http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/>
-but using my own machine's tools and data, without relying on external APIs for
-data gathering (e.g., email services), analysis, and visualization.
+but using my own machine's tools and data without relying on external APIs for
+data collection, analysis, and visualization.
 
 
 Requirements
@@ -29,6 +29,14 @@ At the moment, running
 
 will put the logs in a directory 'peter', run the awk script on the logs, and
 then display a 2D histogram.
+
+
+Example
+-------
+
+Here's the histogram for my own logs going back to September 3, 2011:
+
+![Peter's messed up sleep schedule](sample.png)
 
 
 TODO
