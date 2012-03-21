@@ -13,7 +13,29 @@ but using my own machine's tools and data, without relying on external APIs for
 data gathering (e.g., email services), analysis, and visualization.
 
 
+Requirements
+------------
+
+awk, Python, numpy, matplotlib
+
+
 Usage
 -----
 
-FIXME
+At the moment, running
+
+    ./generate peter
+    ./plot.py peter
+
+will put the logs in a directory 'peter', run the awk script on the logs, and
+then display a 2D histogram.
+
+
+TODO
+----
+
+*   The awk script is really slow, it calls Unix `date` about 85,000 times on
+    my dataset. Probably gonna put the parsing bit into a Python or Perl
+    script.
+*   There's no persistence. I think what it should do is save your new logfiles
+    every time you call `./generate` or whatever it becomes.

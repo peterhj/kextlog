@@ -1,26 +1,36 @@
 #!/bin/bash
 
-PREFIX=.
-
-if [ -n $1 ]; then
-  PREFIX=$1
-fi
-
-PREFIX=$PREFIX/kernel.log
-OUTFILE=$PREFIX.out
-PARSE=./parse
-DOTDOT=./dotdot
-
 parselog() {
   echo -n 'Parsing' $1
   $PARSE $1 >> $OUTFILE &
   $DOTDOT $!
 }
 
-if [ -e $OUTFILE ]; then
-  echo 'Removing outfile.'
-  rm -f $OUTFILE
+BASE=.
+
+if [ -n $1 ]; then
+  BASE=$1
 fi
+
+PREFIX=$BASE/kernel.log
+OUTFILE=$PREFIX.out
+PARSE=./parse
+DOTDOT=./dotdot
+
+# Clean up the data directory.
+if [ $BASE != '.' ]; then
+  if [ -d $BASE ]; then
+    echo 'Removing' $BASE
+    rm -r -f $BASE
+  fi
+  echo 'Creating dataset' $BASE
+  mkdir $BASE
+fi
+
+# Copy over logs and run awk script.
+cp /var/log/kernel.log $BASE
+cp /var/log/kernel.log.*.bz2 $BASE
+bunzip2 $BASE/kernel.log.*.bz2
 
 parselog $PREFIX
 for ((i = 0; i <= 5; i++)); do
