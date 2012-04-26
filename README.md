@@ -36,7 +36,7 @@ Example
 
 Here's the histogram for my own logs going back to September 3, 2011:
 
-![Peter's messed up sleep schedule](kextlog/raw/master/sample.png)
+![Peter's messed up sleep schedule](kextlog/raw/master/sample560.png)
 
 
 TODO
