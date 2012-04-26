@@ -3,7 +3,7 @@
 BASE=`whoami`
 PREFIX=$BASE/kernel.log
 OUTFILE=$PREFIX.out
-PARSE=./parse.py
+PARSE=./parse.awk
 DOTDOT=./dotdot
 
 parselog() {
