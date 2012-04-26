@@ -18,7 +18,7 @@ now = datetime.strptime(''.join([str(now.year), ' ',
                                  '%Y %m %d %H:%M:%S %Z').strftime('%s')
 
 # List of strings to search for which form the basis of the events of interest
-keystring = ['Sleep']
+keystring = ['sleep']
 
 #now = time.localtime()
 
@@ -26,10 +26,10 @@ f = '%Y %b %d %H:%M:%S %Z'
 
 for i, row in enumerate(log_iter):
     row[2] = row[2][:2]
-    for s in keystring:
+    for keyword in keystring:
         # Join the rows for string matching
         stringrow = ' '.join(row)
-        if s in stringrow:
+        if keyword in stringrow:
             s = ''.join(['2012 ', row[0], ':', row[1], ':', row[2], ' GMT'])
             t = datetime.strptime(s, f)
             #t = time.strptime(s, f)
