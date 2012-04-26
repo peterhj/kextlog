@@ -6,6 +6,7 @@ import numpy as np
 
 from datetime import *
 import csv
+import getpass
 import sys
 
 # http://stackoverflow.com/questions/845058/how-to-get-line-count-cheaply-in-python
@@ -21,10 +22,10 @@ def day_format(d):
 def hour_format(h):
     return lambda x, pos: int(x) / h
 
+prefix = getpass.getuser()
+
 if (len(sys.argv) > 1):
     prefix = sys.argv[1]
-else:
-    prefix = '.'
 
 log_file = ''.join([prefix, '/', 'kernel.log.out'])
 log_iter = csv.reader(open(log_file, 'rb'), delimiter=' ')

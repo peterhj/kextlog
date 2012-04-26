@@ -3,7 +3,7 @@
 BASE=`whoami`
 PREFIX=$BASE/kernel.log
 OUTFILE=$PREFIX.out
-PARSE=./parse
+PARSE=./parse.py
 DOTDOT=./dotdot
 
 parselog() {
@@ -14,7 +14,7 @@ parselog() {
 
 # Clean up the data directory.
 if [ -d $BASE ]; then
-  echo 'Removing' $BASE
+  echo 'Removing dataset' $BASE
   rm -r -f $BASE
 fi
 echo 'Creating dataset' $BASE
