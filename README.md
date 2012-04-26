@@ -42,8 +42,8 @@ Here's the histogram for my own logs going back to September 3, 2011:
 TODO
 ----
 
-*   The awk script is really slow, it calls Unix `date` about 85,000 times on
-    my dataset. Probably gonna put the parsing bit into a Python or Perl
-    script.
+*   The python log parsing script is a lot faster than the awk script,
+    but there's a problem with getting the right timezone. I'll figure it
+    out another time.
 *   There's no persistence. I think what it should do is save your new logfiles
     every time you call `./generate` or whatever it becomes.
